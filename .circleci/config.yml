@@ -22,8 +22,8 @@ jobs:
             docker build -t udagram-frontend ./udagram-frontend 
             docker tag udagram-frontend beakalyk/udagram-frontend:v3b
             docker build -t reverseproxy ./udagram-reverseproxy
-            docker tag reverseproxy:local beakalyk/reverseproxy
-            echo "-------- All images succesfully built----------"
+            docker tag reverseproxy beakalyk/reverseproxy:v3b
+             echo "-------- All images succesfully built----------"
             docker login -u beakalyk -p $DOCKER_PASSWORD
             echo " ------- login in to hub--------"
             echo "-------------- Pushing images to dockerhub-------"
