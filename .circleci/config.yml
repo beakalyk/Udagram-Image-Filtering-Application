@@ -21,8 +21,8 @@ jobs:
             docker tag udagram-api-user  beakalyk/udagram-api-user:v3b
             docker build -t udagram-frontend ./udagram-frontend 
             docker tag udagram-frontend beakalyk/udagram-frontend:v3b
-            docker build -t udagram-reverseproxy ./udagram-reverseproxy
-            docker tag udagram-reverseproxy:local beakalyk/reverseproxy:local
+            docker build -t reverseproxy ./udagram-reverseproxy
+            docker tag reverseproxy:local beakalyk/reverseproxy
             echo "-------- All images succesfully built----------"
             docker login -u beakalyk -p $DOCKER_PASSWORD
             echo " ------- login in to hub--------"
@@ -30,7 +30,7 @@ jobs:
             docker push beakalyk/udagram-api-feed:v3b
             docker push beakalyk/udagram-api-user:v3b
             docker push beakalyk/udagram-frontend:v3b
-            docker push beakalyk/reverseproxy:local
+            docker push beakalyk/reverseproxy:v3b
             
 workflows:
   default:
