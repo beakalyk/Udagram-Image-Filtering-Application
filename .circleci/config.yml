@@ -15,14 +15,14 @@ jobs:
           name: Build docker container 
           command: |
             echo "--------- The images is Building ------------"
-            docker build -t udagram-api-feed:v3b ./udagram-api-feed:v3b
-            docker tag udagram-api-feed:v3b beakalyk/udagram-api-feed:v3b
-            docker build -t udagram-api-user:v3b ./udagram-api-user:v3b
-            docker tag udagram-api-user:v3b beakalyk/udagram-api-user:v3b
-            docker build -t udagram-frontend:v3b ./udagram-frontend:v3b
-            docker tag udagram-frontend:v3b beakalyk/udagram-frontend:v3b
-            docker build -t reverseproxy:v3b ./udagram-reverseproxy:v3b
-            docker tag reverseproxy:v3b beakalyk/reverseproxy:v3b
+            docker build -t udagram-api-feed ./udagram-api-feed 
+            docker tag udagram-api-feed beakalyk/udagram-api-feed:v3b
+            docker build -t udagram-api-user ./udagram-api-user 
+            docker tag udagram-api-user  beakalyk/udagram-api-user:v3b
+            docker build -t udagram-frontend ./udagram-frontend 
+            docker tag udagram-frontend beakalyk/udagram-frontend:v3b
+            docker build -t reverseproxy ./udagram-reverseproxy:v3b
+            docker tag reverseproxy beakalyk/reverseproxy:v3b
             echo "-------- All images succesfully built----------"
             docker login -u beakalyk -p $DOCKER_PASSWORD
             echo " ------- login in to hub--------"
